@@ -1,5 +1,5 @@
 import React from 'react'
-import {NavLink,Routes,Route} from 'react-router-dom'
+import {NavLink,Routes,Route,Navigate} from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
 
@@ -28,6 +28,7 @@ export default function App() {
                     <Routes>
                         <Route path="/about" element={<About/>}/>
                         <Route path="/home" element={<Home/>}/>
+                        <Route path="/" element={<Navigate to="/about"/>}/>
                     </Routes>
                 </div>
             </div>
