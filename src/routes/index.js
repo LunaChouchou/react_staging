@@ -1,5 +1,7 @@
 import About from '../pages/About'
 import Home from '../pages/Home'
+import News from '../pages/News'
+import Message from '../pages/Message'
 import {Navigate} from 'react-router-dom'
 
 export default [
@@ -9,7 +11,17 @@ export default [
     },
     {
         path: '/home',
-        element: <Home/>
+        element: <Home/>,
+        children:[
+            {
+                path:'news',
+                element:<News/>
+            },
+            {
+                path:'message',
+                element:<Message/>
+            }
+        ]
     },
     {
         path: '/',
