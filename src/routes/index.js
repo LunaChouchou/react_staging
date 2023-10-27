@@ -2,6 +2,7 @@ import About from '../pages/About'
 import Home from '../pages/Home'
 import News from '../pages/News'
 import Message from '../pages/Message'
+import Detail from '../pages/Detail'
 import {Navigate} from 'react-router-dom'
 
 export default [
@@ -19,7 +20,13 @@ export default [
             },
             {
                 path:'message',
-                element:<Message/>
+                element:<Message/>,
+                children:[
+                    {
+                        path:'detail/:id/:title/:content',
+                        element:<Detail/>
+                    }
+                ]
             }
         ]
     },
